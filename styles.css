@@ -6,4 +6,11 @@ iframe {
  position: absolute;
  width: 100%;
  height: 100%;
+ box-sizing: border-box;
+}
+.topbanner-mobile {
+  display: flex;
+}
+.topbanner-wrapper-desktop {
+  display: none;
 }
