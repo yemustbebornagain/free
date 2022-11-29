@@ -25,7 +25,7 @@ iframe {
     overflow: hidden;
     margin: 0;
     width: 100%;
-    height: calc(100% + 68px);
+    height: 100%;
 }
 #edit-profile-overlay {
     position: fixed;
