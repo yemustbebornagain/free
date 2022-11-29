@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mecenat</title>
+  <title>Studentkortet</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <!-- <meta name="apple-mobile-web-app-status-bar-style" content="default"> -->
-  <meta name="theme-color" content="#10A5C5">
+  <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- stylesheet -->
@@ -19,13 +19,16 @@
   <div id="edit-profile-overlay"></div>
   <div id="open-card-overlay"></div>
   <div class="iframe-wrapper">
-    <iframe src="https://mecenat.com/se"></iframe>
+    <iframe src="https://www.studentkortet.se/"></iframe>
   </div>
-  <div id="mobile-header">
-    <img src="logo.svg" />
-    <img src="q.svg" id="mobile-header-q" />
-    <img src="profile.svg" id="mobile-header-profile" />
+  <div id="edit-profile" class="hidden">
+    <div id="edit-profile-close"><img src="close.svg"></div>
+    <label for="lname">Full name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your full name...">
+    <label for="fname">Personal number</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your personal number...">
   </div>
+  <div id="open-card" class="hidden"></div>
   <script src="jquery.js"></script>
   <script src="main.js"></script> 
 </body>
