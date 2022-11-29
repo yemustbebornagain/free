@@ -181,9 +181,27 @@ iframe {
 }
 #open-card {
     color: #fff;
+    text-align: center;
 }
 #open-card-close {
     position: absolute;
-    left: 30px;
+    left: 20px;
     bottom: 5px;
+}
+.card-wrapper {
+    position: relative;
+}
+.card {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 95%;
+}
+#card-info {
+    transform: rotate(90deg);
+    color: #000;
+    position: absolute;
+    left: calc(50% - 20px);
+    top: 40px;
+    text-align: left;
 }
