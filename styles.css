@@ -58,3 +58,20 @@ iframe {
     right: 10px;
     top: 10px;
 }
+#bottom-menu {
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+}
+.bottom-menu-item {
+    float: left;
+    width: 20%;
+    padding: 10px 0 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.bottom-menu-item img {
+    width: 25%;
+}
