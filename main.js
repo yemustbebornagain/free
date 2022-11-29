@@ -14,10 +14,10 @@ $(document).ready(function () {
         openCardWindowShow = !openCardWindowShow;
         if (openCardWindowShow) {
             $("#open-card").show();
-            $('meta[name="theme-color"]')?.setAttribute('content', '#000');
+            document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#000');
         } else {
             $("#open-card").hide();
-            $('meta[name="theme-color"]')?.setAttribute('content', '#fff');
+            document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#fff');
         }
     });
     $("#fullname").val(Cookies.get("fullname"));
