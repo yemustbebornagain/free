@@ -9,9 +9,3 @@ iframe {
  box-sizing: border-box;
  border: 0 none;
 }
-.topbanner-mobile {
-  display: flex;
-}
-.topbanner-wrapper-desktop {
-  display: none;
-}
