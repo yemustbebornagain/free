@@ -35,9 +35,19 @@ iframe {
     position: fixed;
     top: 0;
     left: 0;
-    height: 2rem;
-    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+    padding: 0.6rem 1rem;
     width: 100%;
     text-align: center;
     background-color: #10A5C5;
+}
+#mobile-header-q {
+    position: absolute;
+    right: calc(1rem + 40px);
+    top: 0.8rem;
+}
+#mobile-header-profile {
+    position: absolute;
+    right: calc(1rem + 5px);
+    top: 0.8rem;
 }
