@@ -20,12 +20,12 @@ $(document).ready(function () {
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#fff');
         }
     });
-    $("#fullname").val(Cookies.get("fullname"));
-    $("#PN").val(Cookies.get("PN"));
+    $("#fullname").val(localStorage.getItem('fullname'));
+    $("#PN").val(localStorage.getItem('PN'));
     $("#fullname").change(function() {
-        Cookies.set("fullname", $("#fullname").val());
+        localStorage.setItem('fullname', $("#fullname").val());
     });
     $("#PN").change(function() {
-        Cookies.set("PN", $("#PN").val());
+        localStorage.setItem('PN', $("#PN").val());
     });
 });
