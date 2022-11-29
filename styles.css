@@ -8,4 +8,6 @@ iframe {
  height: 100%;
  box-sizing: border-box;
  border: 0 none;
+ margin-top: -68px;
+ margin-bottom: -5px;
 }
