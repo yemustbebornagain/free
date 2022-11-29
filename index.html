@@ -23,20 +23,21 @@
   </div>
   <div id="bottom-menu">
     <div class="bottom-menu-item"><img src="icons/home-icon.png" /></div>
-    <div class="bottom-menu-item"><img src="icons/location-icon.png" /></div>
-    <div class="bottom-menu-item"><img src="icons/card-icon.webp" /></div>
-    <div class="bottom-menu-item"><img src="icons/ticket-icon.png" /></div>
-    <div class="bottom-menu-item"><img src="icons/blog-icon.webp" /></div>
+    <div class="bottom-menu-item"><img src="icons/location-icon.png" class="blurr" /></div>
+    <div class="bottom-menu-item"><img src="icons/card-icon.webp" class="blurr" /></div>
+    <div class="bottom-menu-item"><img src="icons/ticket-icon.png" class="blurr" /></div>
+    <div class="bottom-menu-item"><img src="icons/blog-icon.webp" class="blurr" /></div>
   </div>
   <div id="edit-profile" class="hidden">
     <div id="edit-profile-close"><img src="icons/close.svg"></div>
-    <label for="lname">Full name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your full name...">
-    <label for="fname">Personal number</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your personal number...">
+    <label for="fullname">Full name</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Your full name...">
+    <label for="PN">Personal number</label>
+    <input type="text" id="PN" name="PN" placeholder="Your personal number...">
   </div>
   <div id="open-card" class="hidden"></div>
   <script src="jquery.js"></script>
+  <script src="js.cookie.min.js"></script>
   <script src="main.js"></script> 
 </body>
 </html>
