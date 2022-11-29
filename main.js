@@ -10,11 +10,13 @@ $(document).ready(function () {
             $("#edit-profile").hide();
         }
     });
-    $("#open-card-overlay").click(function() {
+    $("#open-card-overlay,#open-card-close").click(function() {
         openCardWindowShow = !openCardWindowShow;
         if (openCardWindowShow) {
             $("#open-card").show();
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#111');
+            $("#card-fullname").text(localStorage.getItem('fullname') ? localStorage.getItem('fullname') : "Peter Parker");
+            $("#card-PN").text(localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234");
         } else {
             $("#open-card").hide();
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#fff');
