@@ -185,6 +185,7 @@ iframe {
     position: absolute;
     left: 25px;
     bottom: 50px;
+    font-size: 20px;
 }
 .card-wrapper {
     position: relative;
@@ -198,7 +199,11 @@ iframe {
     transform: rotate(90deg);
     color: #000;
     position: absolute;
-    left: calc(50% - 20px);
-    top: 40px;
+    left: calc(50% - 50px);
+    top: 29px;
     text-align: left;
+    font-size: 15px;
+}
+#card-number {
+    font-size: 12px;
 }
