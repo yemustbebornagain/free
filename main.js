@@ -14,7 +14,7 @@ $(document).ready(function () {
         openCardWindowShow = !openCardWindowShow;
         if (openCardWindowShow) {
             $("#open-card").show();
-            document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#000');
+            document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#111');
         } else {
             $("#open-card").hide();
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#fff');
