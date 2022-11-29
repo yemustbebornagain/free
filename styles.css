@@ -44,10 +44,10 @@ iframe {
 #mobile-header-q {
     position: absolute;
     right: calc(1rem + 40px);
-    top: 1rem;
+    top: 1.2rem;
 }
 #mobile-header-profile {
     position: absolute;
     right: calc(1rem + 5px);
-    top: 1rem;
+    top: 1.3rem;
 }
