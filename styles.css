@@ -81,6 +81,7 @@ iframe {
 }
 .bottom-menu-item img {
     width: 33%;
+    max-width: 28px;
 }
 .leaf{
     position:absolute ;
