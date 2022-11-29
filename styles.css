@@ -31,3 +31,13 @@ iframe {
     bottom: 0;
     left: calc(50% - 50px);
 }
+#mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    padding: 0.8rem 1rem;
+    width: 100%;
+    text-align: center;
+    background-color: #10A5C5;
+}
