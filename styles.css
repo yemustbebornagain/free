@@ -199,11 +199,14 @@ iframe {
     transform: rotate(90deg);
     color: #000;
     position: absolute;
-    left: calc(50% - 70px);
-    top: 70px;
+    left: calc(50% - 65px);
+    top: 55px;
     text-align: left;
     font-size: 15px;
+    font-smooth: 3em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 #card-number {
-    font-size: 9px;
+    font-size: 10px;
 }
