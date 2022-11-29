@@ -17,6 +17,7 @@ $(document).ready(function () {
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#111');
             $("#card-fullname").text(localStorage.getItem('fullname') ? localStorage.getItem('fullname') : "Peter Parker");
             $("#card-PN").text(localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234");
+            $("#card-number").text("6032 9153 5672 0156");
         } else {
             $("#open-card").hide();
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#fff');
