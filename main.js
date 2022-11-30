@@ -32,14 +32,19 @@ $(document).ready(function () {
         localStorage.setItem('PN', $("#PN").val());
     });
     $(".card-wrapper").click(function() {
-        console.log($(this).css("transform"));
         if ($(this).css("transform")=="none"||$(this).css("transform")=="") {
             $(this).css("-webkit-transform","rotateY(180deg)");
             $(this).css("transform","rotateY(180deg)");
-        }
-        else {
+        } else {
             $(this).css("-webkit-transform","");
             $(this).css("transform","");
         }
+    });
+    $(".card-carousel").slick({
+        infinite: false,
+        dots: true,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
     });
 });
