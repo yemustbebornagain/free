@@ -1,59 +1,95 @@
-var editProfileWindowShow = false;
-var openCardWindowShow = false;
-var slickLoaded = false;
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Studentkortet</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- <meta name="apple-mobile-web-app-status-bar-style" content="default"> -->
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
-$(document).ready(function () {
-    $("#edit-profile-overlay").click(function() {
-        editProfileWindowShow = !editProfileWindowShow;
-        if (editProfileWindowShow) {
-            $("#edit-profile").show();
-        } else {
-            $("#edit-profile").hide();
-        }
-    });
-    $("#open-card-overlay").click(function() {
-        openCardWindowShow = !openCardWindowShow;
-        if (openCardWindowShow) {
-            $("#open-card").show();
-            document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#111');
-            $("#card-fullname").text(localStorage.getItem('fullname') ? localStorage.getItem('fullname') : "Peter Parker");
-            $("#card-PN").text(localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234");
-            $("#card-number").text("6032 9153 5672 0156");
-        }
-        if (!slickLoaded) {
-            $(".card-carousel").slick({
-                infinite: false,
-                dots: true,
-                arrows: false,
-                slidesToShow: 1,
-                slidesToScroll: 1
-            });
-            slickLoaded = true;
-        }
-    });
-    $("#open-card-close").click(function() {
-        openCardWindowShow = !openCardWindowShow;
-        if (!openCardWindowShow) {
-            $("#open-card").hide();
-            document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#fff');
-        }
-    });
-    $("#fullname").val(localStorage.getItem('fullname'));
-    $("#PN").val(localStorage.getItem('PN'));
-    $("#fullname").change(function() {
-        localStorage.setItem('fullname', $("#fullname").val());
-    });
-    $("#PN").change(function() {
-        localStorage.setItem('PN', $("#PN").val());
-    });
-    $(".card-wrapper").click(function() {
-        if ($(this).css("transform")=="none"||$(this).css("transform")=="") {
-            $(this).css("-webkit-transform","rotateY(180deg)");
-            $(this).css("transform","rotateY(180deg)");
-        } else {
-            $(this).css("-webkit-transform","");
-            $(this).css("transform","");
-        }
-    });
+  <!-- stylesheet -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href="slick.css" rel="stylesheet">
+  <link href="slick-theme.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+</head>
+<body>
+  <div id="edit-profile-overlay"></div>
+  <div id="open-card-overlay"></div>
+  <div class="iframe-wrapper">
+    <iframe src="https://www.studentkortet.se/"></iframe>
+  </div>
+  <div id="bottom-menu">
+    <div class="bottom-menu-item"><img src="icons/home-icon.png" /></div>
+    <div class="bottom-menu-item"><img src="icons/location-icon.png" class="blurr" /></div>
+    <div class="bottom-menu-item"><img src="icons/card-icon.webp" class="blurr" /></div>
+    <div class="bottom-menu-item"><img src="icons/ticket-icon.png" class="blurr" /></div>
+    <div class="bottom-menu-item"><img src="icons/blog-icon.webp" class="blurr" /></div>
+  </div>
+  <div id="edit-profile" class="hidden">
+    <div id="edit-profile-close"><img src="icons/close.svg"></div>
+    <label for="fullname">Full name</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Your full name...">
+    <label for="PN">Personal number</label>
+    <input type="text" id="PN" name="PN" placeholder="Your personal number...">
+  </div>
+  <div id="open-card" class="hidden">
+    <div class="leaf">
+      <div>  <img src="stuk-white.svg" height="75px" width="75px"></img></div>
+      <div><img src="stuk-white.svg" height="75px" width="75px"></img></div>
+      <div>  <img src="stuk-white.svg" height="75px" width="75px" ></img></div>
+      <div><img  src="stuk-white.svg" height="75px" width="75px"></img></div>
+      <div> <img src="stuk-white.svg" height="75px" width="75px"></img></div>
+      <div>   <img src="stuk-white.svg" height="75px" width="75px"></div>
+      <div><img src="stuk-white.svg" height="75px" width="75px"></div>
+    </div>
     
-});
+    <div class="card-carousel">
+      <div class="card-wrapper-ios">
+        <div class="card-wrapper">
+          <div class="flip-card-front">
+            <img src="card-front.png" class="card" />
+            <div id="card-info">
+              <span id="card-fullname"></span>
+              <br />
+              <span id="card-PN"></span>
+              <br />
+              <span id="card-number"></span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="card-back.png" class="card" />
+          </div>
+        </div>
+      </div>
+      <div class="card-wrapper-ios">
+        <div class="card-wrapper">
+          <div class="flip-card-front">
+            <img src="card-front.png" class="card" />
+            <div id="card-info">
+              <span id="card-fullname"></span>
+              <br />
+              <span id="card-PN"></span>
+              <br />
+              <span id="card-number"></span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="card-back.png" class="card" />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="open-card-close">Stäng</div>
+  </div>
+  <script src="jquery.js"></script>
+  <script src="slick.min.js"></script>
+  <script src="main.js"></script> 
+</body>
+</html>
