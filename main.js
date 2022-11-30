@@ -1,5 +1,6 @@
 var editProfileWindowShow = false;
 var openCardWindowShow = false;
+var slickLoaded = false;
 
 $(document).ready(function () {
     $("#edit-profile-overlay").click(function() {
@@ -10,7 +11,7 @@ $(document).ready(function () {
             $("#edit-profile").hide();
         }
     });
-    $("#open-card-overlay,#open-card-close").click(function() {
+    $("#open-card-overlay").click(function() {
         openCardWindowShow = !openCardWindowShow;
         if (openCardWindowShow) {
             $("#open-card").show();
@@ -18,7 +19,21 @@ $(document).ready(function () {
             $("#card-fullname").text(localStorage.getItem('fullname') ? localStorage.getItem('fullname') : "Peter Parker");
             $("#card-PN").text(localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234");
             $("#card-number").text("6032 9153 5672 0156");
-        } else {
+        }
+        if (!slickLoaded) {
+            $(".card-carousel").slick({
+                infinite: false,
+                dots: true,
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            });
+            slickLoaded = true;
+        }
+    });
+    $("#open-card-close").click(function() {
+        openCardWindowShow = !openCardWindowShow;
+        if (!openCardWindowShow) {
             $("#open-card").hide();
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#fff');
         }
@@ -40,11 +55,5 @@ $(document).ready(function () {
             $(this).css("transform","");
         }
     });
-    $(".card-carousel").slick({
-        infinite: false,
-        dots: true,
-        arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    });
+    
 });
