@@ -204,6 +204,7 @@ iframe {
 }
 .flip-card-front img, .flip-card-back img {
     width: 100%;
+    border-radius: 16px;
 }
 .flip-card-back {
     transform: rotateY(180deg);
