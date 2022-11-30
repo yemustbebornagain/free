@@ -212,7 +212,7 @@ iframe {
 .flip-card-back {
     transform: rotateY(180deg);
 }
-#card-info {
+.card-info {
     transform: rotate(90deg);
     color: #000;
     position: absolute;
@@ -224,7 +224,7 @@ iframe {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-#card-number {
+#card1-number, #card2-number {
     font-size: 10px;
 }
 .card-wrapper-ios {
@@ -238,6 +238,7 @@ iframe {
 }
 .card-carousel {
     width: 420px;
+    padding: 0 10px;
     height: 635px;
     margin: 0 auto;
 }
