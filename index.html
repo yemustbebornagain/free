@@ -87,8 +87,14 @@
     </div>
     
     <div id="open-card-close">Stäng</div>
-    <div id="open-card-qr"><img src="icons/qr-icon.png" width="25" height="25" /></div>
+    <div id="open-card-qr"><img id="qr-code-open" src="icons/qr-icon.png" width="25" height="25" /></div>
     <div id="open-card-refresh"><img src="icons/refresh-icon.png" width="25" height="25" /></div>
+  </div>
+  <div id="qr-code" class="hidden">
+    <div class="qr-code-container">
+      <h2>QR-kod för ditt kort</h2>
+      <img src="qr-code.webp" />
+    </div>
   </div>
   <script src="jquery.js"></script>
   <script src="slick.min.js"></script>
