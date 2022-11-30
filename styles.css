@@ -194,6 +194,8 @@ iframe {
 }
 .card-wrapper {
     position: relative;
+    width: 400px;
+    height: 635px;
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
@@ -230,4 +232,12 @@ iframe {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+}
+.slick-dots li button::before, .slick-dots li.slick-active button::before {
+    color: #fff;
+}
+.card-carousel {
+    width: 420px;
+    height: 635px;
+    margin: 0 auto;
 }
