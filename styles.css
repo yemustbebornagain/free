@@ -235,8 +235,8 @@ iframe {
     width: 100%;
 }
 .flip-card-front img, .flip-card-back img {
-    aspect-ratio: 1013/638;
     width: 96vw;
+    height: 152.426332288vw;
     border-radius: 16px;
 }
 .flip-card-back {
