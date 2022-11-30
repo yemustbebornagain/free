@@ -1,74 +1,237 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Studentkortet</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <!-- <meta name="apple-mobile-web-app-status-bar-style" content="default"> -->
-  <meta name="theme-color" content="#ffffff">
-  <meta name="viewport" content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.hidden {
+    display: none;
+}
+.blurr {
+    opacity: 0.4;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0 none;
+}
+.iframe-wrapper {
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+#edit-profile-overlay {
+    position: fixed;
+    z-index: 9999;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    right: 0;
+}
+#open-card-overlay {
+    position: fixed;
+    z-index: 9999;
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    left: calc(50% - 50px);
+}
+#edit-profile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+}
+#edit-profile-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
 
-  <!-- stylesheet -->
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link href="slick.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
-  <!-- favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-</head>
-<body>
-  <div id="edit-profile-overlay"></div>
-  <div id="open-card-overlay"></div>
-  <div class="iframe-wrapper">
-    <iframe src="https://www.studentkortet.se/"></iframe>
-  </div>
-  <div id="bottom-menu">
-    <div class="bottom-menu-item"><img src="icons/home-icon.png" /></div>
-    <div class="bottom-menu-item"><img src="icons/location-icon.png" class="blurr" /></div>
-    <div class="bottom-menu-item"><img src="icons/card-icon.webp" class="blurr" /></div>
-    <div class="bottom-menu-item"><img src="icons/ticket-icon.png" class="blurr" /></div>
-    <div class="bottom-menu-item"><img src="icons/blog-icon.webp" class="blurr" /></div>
-  </div>
-  <div id="edit-profile" class="hidden">
-    <div id="edit-profile-close"><img src="icons/close.svg"></div>
-    <label for="fullname">Full name</label>
-    <input type="text" id="fullname" name="fullname" placeholder="Your full name...">
-    <label for="PN">Personal number</label>
-    <input type="text" id="PN" name="PN" placeholder="Your personal number...">
-  </div>
-  <div id="open-card" class="hidden">
-    <div class="leaf">
-      <div>  <img src="stuk-white.svg" height="75px" width="75px"></img></div>
-      <div><img src="stuk-white.svg" height="75px" width="75px"></img></div>
-      <div>  <img src="stuk-white.svg" height="75px" width="75px" ></img></div>
-      <div><img  src="stuk-white.svg" height="75px" width="75px"></img></div>
-      <div> <img src="stuk-white.svg" height="75px" width="75px"></img></div>
-      <div>   <img src="stuk-white.svg" height="75px" width="75px"></div>
-      <div><img src="stuk-white.svg" height="75px" width="75px"></div>
-    </div>
-    <div id="card2">
-      <div class="card-wrapper">
-        <div class="flip-card-front">
-          <img src="card-front.png" class="card" />
-          <div id="card-info">
-            <span id="card-fullname"></span>
-            <br />
-            <span id="card-PN"></span>
-            <br />
-            <span id="card-number"></span>
-          </div>
-        </div>
-        <div class="flip-card-back">
-          <img src="card-back.png" class="card" />
-        </div>
-      </div>
-    </div>
+#bottom-menu {
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding-bottom: 30px;
+}
+.bottom-menu-item {
+    float: left;
+    width: 20%;
+    padding: 10px 0 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.bottom-menu-item img {
+    width: 33%;
+    max-width: 28px;
+}
+.leaf{
+    position:absolute ;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    opacity: 0.5;
+}
+.leaf div{
+    position:absolute ;
+    display:block ;
+}
+.leaf div:nth-child(1){
+    left:20%; 
+    --topStart: -10%;
+    --topEnd: 110%;
+    --leftStart: -20%;
+    --leftEnd: 100%;
+    animation:fall 40s linear infinite ;
+    animation-delay:-2s;
+
+}
+.leaf div:nth-child(2){
+    left:70%; 
+    --topStart: 5%;
+    --topEnd: 5%;
+    --leftStart: -10%;
+    --leftEnd: 110%;
+    animation:fall 40s linear infinite ;
+    animation-delay:-4s;
+}
+.leaf div:nth-child(3){
+    left:10%; 
+    --topStart: 90%;
+    --topEnd: 90%;
+    --leftStart: 110%;
+    --leftEnd: -10%;
+    animation:fall 40s linear infinite ;
+    animation-delay:-7s;
     
-    <div id="open-card-close">Stäng</div>
-  </div>
-  <script src="jquery.js"></script>
-  <script src="slick.min.js"></script>
-  <script src="main.js"></script> 
-</body>
-</html>
+}
+.leaf div:nth-child(4){
+    left:50%; 
+    --topStart: -10%;
+    --topEnd: 110%;
+    --leftStart: -10%;
+    --leftEnd: 110%;
+   animation:fall 40s linear infinite ; 
+   animation-delay:-5s;
+}
+.leaf div:nth-child(5){
+    left:5%; 
+    --topStart: -10%;
+    --topEnd: 110%;
+    --leftStart: 5%;
+    --leftEnd: 5%;
+    animation:fall 40s linear infinite ;
+    animation-delay:-5s;
+}
+.leaf div:nth-child(6){
+    left:80%; 
+    --topStart: -10%;
+    --topEnd: 110%;
+    --leftStart: 80%;
+    --leftEnd: 80%;
+    animation:fall 40s linear infinite ;
+    animation-delay:0s;
+}
+.leaf div:nth-child(7){
+    left:90%; 
+    --topStart: 110%;
+    --topEnd: -10%;
+    --leftStart: 110%;
+    --leftEnd: -10%;
+    animation:fall 40s linear infinite;
+    animation-delay:-5s;
+}
+@keyframes fall{
+    0%{
+        opacity:1;
+        top:var(--topStart);
+        left:var(--leftStart);
+    }
+    100%{
+        top:var(--topEnd);
+        left:var(--leftEnd);
+    }
+}
+#open-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    padding-top: 80px;
+    box-sizing: border-box;
+    color: #fff;
+}
+#open-card-close {
+    position: absolute;
+    left: 25px;
+    bottom: 50px;
+    font-size: 20px;
+}
+.card-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: transform 0.6s;
+    transition: transform 0.6s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: block;
+  }
+  .flip-card-front img, .flip-card-back img {
+    width: 100%;
+  }
+.flip-card-back {
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+#card-info {
+    transform: rotate(90deg);
+    color: #000;
+    position: absolute;
+    left: calc(50% - 65px);
+    top: 58px;
+    text-align: left;
+    font-size: 15px;
+    font-smooth: 3em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#card-number {
+    font-size: 10px;
+}
+#card2 {
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+}
