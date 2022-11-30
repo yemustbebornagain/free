@@ -1,5 +1,6 @@
 var editProfileWindowShow = false;
 var openCardWindowShow = false;
+var qrCodeWindowShow = false;
 var slickLoaded = false;
 
 $(document).ready(function () {
@@ -55,5 +56,16 @@ $(document).ready(function () {
             $(this).css("transform","");
         }
     });
-    
+    $("#qr-code-open").click(function() {
+        qrCodeWindowShow = !qrCodeWindowShow;
+        if (qrCodeWindowShow) {
+            $("#qr-code").show();
+        }
+    });
+    $("#qr-code").click(function() {
+        qrCodeWindowShow = !qrCodeWindowShow;
+        if (!qrCodeWindowShow) {
+            $("#qr-code").hide();
+        }
+    });
 });
