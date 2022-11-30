@@ -16,9 +16,9 @@ $(document).ready(function () {
         if (openCardWindowShow) {
             $("#open-card").show();
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#111');
-            $("#card-fullname").text(localStorage.getItem('fullname') ? localStorage.getItem('fullname') : "Peter Parker");
-            $("#card-PN").text(localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234");
-            $("#card-number").text("6032 9153 5672 0156");
+            $("#card1-fullname,#card2-fullname").text(localStorage.getItem('fullname') ? localStorage.getItem('fullname') : "Peter Parker");
+            $("#card1-PN,#card2-PN").text(localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234");
+            $("#card1-number,#card2-number").text("6032 9153 5672 0156");
         }
         if (!slickLoaded) {
             $(".card-carousel").slick({
