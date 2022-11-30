@@ -183,7 +183,7 @@ iframe {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #111;
+    background-color: #222;
     padding-top: 80px;
     box-sizing: border-box;
     color: #fff;
@@ -247,7 +247,7 @@ iframe {
 }
 .card-carousel {
     width: 420px;
-    padding: 0 10px;
+    padding: 0 5px;
     height: 635px;
     margin: 0 auto;
 }
@@ -273,10 +273,10 @@ iframe {
 .slick-dots li.slick-active button {
     width: 32px;
     font-size: 16px;
-    padding-top: 3px;
+    padding-top: 2px;
     color: #000;
     margin-left: -3px;
 }
 .slick-dots {
-    bottom: -100px;
+    bottom: -90px;
 }
