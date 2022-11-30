@@ -74,7 +74,7 @@ iframe {
     bottom: 0;
     width: 100%;
     border-top: 1px solid #ddd;
-    padding-bottom: 30px;
+    padding-bottom: env(safe-area-inset-bottom);
 }
 .bottom-menu-item {
     float: left;
