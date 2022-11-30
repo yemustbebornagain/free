@@ -254,29 +254,24 @@ iframe {
 .slick-dots li button::before {
     z-index: -1;
     opacity: 1;
-    font-size: 27px;
+    font-size: 32px;
     color: #000;
     transition: all 0.6s;
 }
 .slick-dots li.slick-active button::before {
     opacity: 1;
-    font-size: 32px;
     color: #fff;
-    margin-left: -3px;
 }
 .slick-dots li button {
-    font-size: 14px;
-    color: #fff;
-    width: 27px;
-    transition: all 0.6s;
-    padding-top: 0px;
-}
-.slick-dots li.slick-active button {
     width: 32px;
     font-size: 16px;
-    color: #000;
-    margin-left: -3px;
+    color: #fff;
+    transition: all 0.6s;
+    padding-top: 0px;
     margin-top: -1px;
+}
+.slick-dots li.slick-active button {
+    color: #000;
 }
 .slick-dots {
     bottom: -80px;
