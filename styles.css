@@ -103,15 +103,15 @@ iframe {
     max-width: 28px;
 }
 .leaf{
-    position:absolute ;
+    position:absolute;
     width:100%;
     --safe-area-inset-bottom: env(safe-area-inset-bottom);
     height:calc(100vh - 60px - var(--safe-area-inset-bottom));
     top:0;
     left:0;
     opacity: 0.5;
-    margin-top: 30px;
-    margin-bottom: calc(30px + var(--safe-area-inset-bottom));
+    margin-top: 5px;
+    margin-bottom: calc(55px + var(--safe-area-inset-bottom));
     overflow: hidden;
 }
 .leaf div{
