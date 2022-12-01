@@ -27,7 +27,7 @@ $(document).ready(function () {
             var fourthFourDigits = ('0000'+(156+theRandomNumber)%9999).slice(-4);
             $("#card1-number,#card2-number").text(firstFourDigits+" "+secondFourDigits+" "+thirdFourDigits+" "+fourthFourDigits);
             $("#open-card").show();
-            var qr_info_pnr = personal_number.replace(/[^a-zA-Z ]/g, "") || "";
+            var qr_info_pnr = personal_number.replace(/[^a-zA-Z ]/g, "");
             var full_name_splits = full_name.split(" ");
             var qr_info_ln = full_name_splits.pop();
             var qr_info_fn = full_name_splits.join(" ");
