@@ -38,7 +38,7 @@
         --card-margin-y: calc((var(--view-width) - var(--card-width)) / 2);
     }
     #open-card {
-        padding-top: 0!important;
+        padding-top: 20px!important;
     }
 }
 * { 
@@ -273,13 +273,13 @@ iframe {
     right: calc(50% - 0.04 * var(--card-width));
     text-align: left;
     top: calc(0.06 * var(--card-height));
-    font-size: calc(0.03 * var(--card-height));
+    font-size: calc(0.025 * var(--card-height));
     display: block;
     width: calc(0.5 * var(--view-width));
     height: calc(0.5 * var(--view-width));
 }
 #card1-number, #card2-number {
-    font-size: calc(0.018 * var(--card-height));
+    font-size: calc(0.015 * var(--card-height));
 }
 .card-wrapper-ios {
     position: relative;
