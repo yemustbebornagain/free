@@ -31,7 +31,7 @@ $(document).ready(function () {
             var qr_info_ln = full_name_splits.pop();
             var qr_info_fn = full_name_splits.join(" ");
             var qr_info = '{"pnr":"'+qr_info_pnr+'","fn":"'+qr_info_fn+'","ln":'+qr_info_ln+',"id":"dzDSqrSKIietOXBftRDdHZ%3D%3D","o2":"STUDENTKORTET I SVERIGE","o2id":6325,"o3":"ÖVRIGA","o3id":5631,"o4":"","o4id":"","valid":"2023-02-10","dt":"2022-11-29 15:29:44","check":"cuifuhp1kyzeo2efa0ko3idbzoaoo81g"}';
-            $("#qr-code-img").attr("src","https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+encodeURIComponent(qr_info));
+            $("#qr-code-img").attr("src","https://api.qrserver.com/v1/create-qr-code/?size=512x512&data="+encodeURIComponent(qr_info));
         }
         if (!slickLoaded) {
             $(".card-carousel").slick({
