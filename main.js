@@ -20,18 +20,18 @@ $(document).ready(function () {
             $("#card1-fullname,#card2-fullname").text(full_name);
             var personal_number = localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234";
             $("#card1-PN,#card2-PN").text(personal_number);
-            var theRandomNumber = parseInt(localStorage.getItem('PN')) || 0;
+            var theRandomNumber = parseInt(personal_number) || 0;
             var firstFourDigits = 6032;
             var secondFourDigits = ('0000'+(9153+theRandomNumber)%9999).slice(-4);
             var thirdFourDigits = ('0000'+(5672+theRandomNumber)%9999).slice(-4);
             var fourthFourDigits = ('0000'+(156+theRandomNumber)%9999).slice(-4);
             $("#card1-number,#card2-number").text(firstFourDigits+" "+secondFourDigits+" "+thirdFourDigits+" "+fourthFourDigits);
             $("#open-card").show();
-            var qr_info_pnr = personal_number.replace(/[^a-zA-Z ]/g, "");
+            var qr_info_pnr = personal_number.replace(/[^0-9]/g, "");
             var full_name_splits = full_name.split(" ");
             var qr_info_ln = full_name_splits.pop();
             var qr_info_fn = full_name_splits.join(" ");
-            var qr_info = '{"pnr":"'+qr_info_pnr+'","fn":"'+qr_info_fn+'","ln":'+qr_info_ln+',"id":"dzDSqrSKIietOXBftRDdHZ%3D%3D","o2":"STUDENTKORTET I SVERIGE","o2id":6325,"o3":"ÖVRIGA","o3id":5631,"o4":"","o4id":"","valid":"2023-02-10","dt":"2022-11-29 15:29:44","check":"cuifuhp1kyzeo2efa0ko3idbzoaoo81g"}';
+            var qr_info = '{"pnr":"'+qr_info_pnr+'","fn":"'+qr_info_fn+'","ln":"'+qr_info_ln+'","id":"dzDSqrSKIietOXBftRDdHZ%3D%3D","o2":"STUDENTKORTET I SVERIGE","o2id":6325,"o3":"ÖVRIGA","o3id":5631,"o4":"","o4id":"","valid":"2023-02-10","dt":"2022-11-29 15:29:44","check":"cuifuhp1kyzeo2efa0ko3idbzoaoo81g"}';
             $("#qr-code-img").attr("src","https://api.qrserver.com/v1/create-qr-code/?size=512x512&data="+encodeURIComponent(qr_info));
         }
         if (!slickLoaded) {
