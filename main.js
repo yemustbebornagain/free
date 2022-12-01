@@ -18,7 +18,8 @@ $(document).ready(function () {
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#222');
             var full_name = localStorage.getItem('fullname') ? localStorage.getItem('fullname') : "Peter Parker";
             $("#card1-fullname,#card2-fullname").text(full_name);
-            $("#card1-PN,#card2-PN").text(localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234");
+            var personal_number = localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234";
+            $("#card1-PN,#card2-PN").text(personal_number);
             var theRandomNumber = parseInt(localStorage.getItem('PN')) || 0;
             var firstFourDigits = 6032;
             var secondFourDigits = ('0000'+(9153+theRandomNumber)%9999).slice(-4);
@@ -26,7 +27,7 @@ $(document).ready(function () {
             var fourthFourDigits = ('0000'+(156+theRandomNumber)%9999).slice(-4);
             $("#card1-number,#card2-number").text(firstFourDigits+" "+secondFourDigits+" "+thirdFourDigits+" "+fourthFourDigits);
             $("#open-card").show();
-            var qr_info_pnr = localStorage.getItem('PN').replace(/[^a-zA-Z ]/g, "") || "";
+            var qr_info_pnr = personal_number.replace(/[^a-zA-Z ]/g, "") || "";
             var full_name_splits = full_name.split(" ");
             var qr_info_ln = full_name_splits.pop();
             var qr_info_fn = full_name_splits.join(" ");
