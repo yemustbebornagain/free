@@ -35,6 +35,7 @@
     :root {
         --card-width: calc(638 / 1013 * (0.96 * var(--view-height) - 90px));
         --card-height: calc(0.96 * var(--view-height) - 90px);
+        --card-margin-y: calc((var(--view-width) - var(--card-width)) / 2);
     }
     #open-card {
         padding-top: 0!important;
