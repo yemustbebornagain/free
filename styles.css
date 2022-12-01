@@ -31,7 +31,7 @@
         left: 0;
     }
 }
-@media (max-aspect-ratio: 5/3) {
+@media (min-aspect-ratio: 3/5) {
     :root {
         --card-width: calc(0.60461994077 * var(--view-height));
         --card-height: calc(0.96 * var(--view-height));
