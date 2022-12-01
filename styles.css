@@ -215,7 +215,7 @@ iframe {
     background-color: #222;
     --safe-area-inset-top: env(safe-area-inset-top);
     --safe-area-inset-bottom: env(safe-area-inset-bottom);
-    padding-top: calc((100% - var(--card-height)) / 2 - var(--safe-area-inset-top) - var(--safe-area-inset-bottom));
+    padding-top: calc((100% - var(--card-height) - var(--safe-area-inset-top) - var(--safe-area-inset-bottom)) / 2);
     box-sizing: border-box;
     color: #fff;
 }
@@ -264,16 +264,16 @@ iframe {
     transform: rotate(90deg);
     color: #000;
     position: absolute;
-    left: calc(50% - 46vw);
+    left: calc(50% - 0.46 * var(--view-width));
     text-align: left;
-    top: 9vw;
-    font-size: 4vw;
+    top: calc(0.09 * var(--view-width));
+    font-size: calc(0.04 * var(--view-width));
     display: block;
-    width: 50vw;
-    height: 50vw;
+    width: calc(0.5 * var(--view-width));
+    height: calc(0.5 * var(--view-width));
 }
 #card1-number, #card2-number {
-    font-size: 2.4vw;
+    font-size: calc(0.024 * var(--view-width));
 }
 .card-wrapper-ios {
     position: relative;
