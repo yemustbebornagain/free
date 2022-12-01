@@ -270,10 +270,10 @@ iframe {
     transform: rotate(90deg);
     color: #000;
     position: absolute;
-    left: calc(50% - 0.46 * var(--view-width));
+    right: calc(50% - 0.04 * var(--card-width));
     text-align: left;
-    top: calc(0.09 * var(--view-width));
-    font-size: calc(0.04 * var(--view-width));
+    top: calc(0.06 * var(--card-height));
+    font-size: calc(0.03 * var(--card-height));
     display: block;
     width: calc(0.5 * var(--view-width));
     height: calc(0.5 * var(--view-width));
