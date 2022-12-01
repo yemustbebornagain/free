@@ -249,7 +249,8 @@ iframe {
 }
 .card-info {
     transform: rotate(90deg);
-    color: transparent;
+    color: #000;
+    filter: blur(0.5px);
     position: absolute;
     left: calc(50% - 46vw);
     text-align: left;
@@ -258,7 +259,6 @@ iframe {
     display: block;
     width: 50vw;
     height: 50vw;
-    text-shadow: 0 0 1px #000;
 }
 #card1-number, #card2-number {
     font-size: calc(2.4vw);
