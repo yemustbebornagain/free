@@ -1,3 +1,8 @@
+:root {
+    --card-width: 96vw;
+    --card-height: 152.426332288vw;
+    --card-margin-y: 2vw;
+}
 @media only screen and (orientation: landscape) {
     html {
         /* Rotate the content container */
@@ -11,6 +16,11 @@
         position: absolute;
         top: 100%;
         left: 0;
+    }
+    :root {
+        --card-width: 96vh;
+        --card-height: 152.426332288vh;
+        --card-margin-y: 2vh;
     }
 }
 * { 
@@ -201,7 +211,7 @@ iframe {
     background-color: #222;
     --safe-area-inset-top: env(safe-area-inset-top);
     --safe-area-inset-bottom: env(safe-area-inset-bottom);
-    padding-top: calc((100vh - 152.426332288vw) / 2 - var(--safe-area-inset-top) - var(--safe-area-inset-bottom));
+    padding-top: calc((100% - var(--card-height)) / 2 - var(--safe-area-inset-top) - var(--safe-area-inset-bottom));
     box-sizing: border-box;
     color: #fff;
 }
@@ -226,8 +236,8 @@ iframe {
 }
 .card-wrapper {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
@@ -238,9 +248,9 @@ iframe {
     width: 100%;
 }
 .flip-card-front img, .flip-card-back img {
-    width: 96vw;
-    margin: 0 2vw;
-    height: 152.426332288vw;
+    width: var(--card-width);
+    margin: 0 var(--card-margin-y);
+    height: var(--card-height);
     border-radius: 16px;
 }
 .flip-card-back {
@@ -253,13 +263,13 @@ iframe {
     left: calc(50% - 46vw);
     text-align: left;
     top: 9vw;
-    font-size: calc(4vw);
+    font-size: 4vw;
     display: block;
     width: 50vw;
     height: 50vw;
 }
 #card1-number, #card2-number {
-    font-size: calc(2.4vw);
+    font-size: 2.4vw;
 }
 .card-wrapper-ios {
     position: relative;
