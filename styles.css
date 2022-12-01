@@ -14,8 +14,8 @@
         --card-margin-y: 2vh;
         --view-width: 100vh;
         --view-height: 100vw;
-        --safe-area-inset-top: 0;
-        --safe-area-inset-bottom: 0;
+        --safe-area-inset-top: 1px;
+        --safe-area-inset-bottom: 1px;
     }
     html {
         /* Rotate the content container */
@@ -129,7 +129,6 @@ iframe {
 .leaf{
     position:absolute;
     width:100%;
-    
     height:calc(var(--view-height) - 90px - var(--safe-area-inset-bottom));
     top:0;
     left:0;
@@ -148,7 +147,6 @@ iframe {
     --leftEnd: 100%;
     animation:fall 40s linear infinite ;
     animation-delay:-2s;
-
 }
 .leaf div:nth-child(2){
     left:70%; 
@@ -167,7 +165,6 @@ iframe {
     --leftEnd: -10%;
     animation:fall 40s linear infinite ;
     animation-delay:-7s;
-    
 }
 .leaf div:nth-child(4){
     left:50%; 
