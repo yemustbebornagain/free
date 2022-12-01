@@ -15,11 +15,16 @@ $(document).ready(function () {
     $("#open-card-overlay").click(function() {
         openCardWindowShow = !openCardWindowShow;
         if (openCardWindowShow) {
-            $("#open-card").show();
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#222');
             $("#card1-fullname,#card2-fullname").text(localStorage.getItem('fullname') ? localStorage.getItem('fullname') : "Peter Parker");
             $("#card1-PN,#card2-PN").text(localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234");
-            $("#card1-number,#card2-number").text("6032 9153 5672 0156");
+            var theRandomNumber = parseInt(localStorage.getItem('PN')) || 0;
+            var firstFourDigits = 6032;
+            var secondFourDigits = ('0000'+(9153+theRandomNumber)%9999).slice(-4);
+            var thirdFourDigits = ('0000'+(5672+theRandomNumber)%9999).slice(-4);
+            var fourthFourDigits = ('0000'+(156+theRandomNumber)%9999).slice(-4);
+            $("#card1-number,#card2-number").text(firstFourDigits+" "+secondFourDigits+" "+thirdFourDigits+" "+fourthFourDigits);
+            $("#open-card").show();
         }
         if (!slickLoaded) {
             $(".card-carousel").slick({
