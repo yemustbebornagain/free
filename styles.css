@@ -279,7 +279,7 @@ iframe {
     height: calc(0.5 * var(--view-width));
 }
 #card1-number, #card2-number {
-    font-size: calc(0.024 * var(--view-width));
+    font-size: calc(0.018 * var(--card-height));
 }
 .card-wrapper-ios {
     position: relative;
