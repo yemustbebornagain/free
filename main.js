@@ -16,7 +16,8 @@ $(document).ready(function () {
         openCardWindowShow = !openCardWindowShow;
         if (openCardWindowShow) {
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#222');
-            $("#card1-fullname,#card2-fullname").text(localStorage.getItem('fullname') ? localStorage.getItem('fullname') : "Peter Parker");
+            var full_name = localStorage.getItem('fullname') ? localStorage.getItem('fullname') : "Peter Parker";
+            $("#card1-fullname,#card2-fullname").text(full_name);
             $("#card1-PN,#card2-PN").text(localStorage.getItem('PN') ? localStorage.getItem('PN'): "990101-1234");
             var theRandomNumber = parseInt(localStorage.getItem('PN')) || 0;
             var firstFourDigits = 6032;
@@ -25,6 +26,12 @@ $(document).ready(function () {
             var fourthFourDigits = ('0000'+(156+theRandomNumber)%9999).slice(-4);
             $("#card1-number,#card2-number").text(firstFourDigits+" "+secondFourDigits+" "+thirdFourDigits+" "+fourthFourDigits);
             $("#open-card").show();
+            var qr_info_pnr = localStorage.getItem('PN').replace(/[^a-zA-Z ]/g, "") || "";
+            var full_name_splits = full_name.split(" ");
+            var qr_info_ln = full_name_splits.pop();
+            var qr_info_fn = full_name_splits.join(" ");
+            var qr_info = '{"pnr":"'+qr_info_pnr+'","fn":"'+qr_info_fn+'","ln":'+qr_info_ln+',"id":"dzDSqrSKIietOXBftRDdHZ%3D%3D","o2":"STUDENTKORTET I SVERIGE","o2id":6325,"o3":"ÖVRIGA","o3id":5631,"o4":"","o4id":"","valid":"2023-02-10","dt":"2022-11-29 15:29:44","check":"cuifuhp1kyzeo2efa0ko3idbzoaoo81g"}';
+            $("#qr-code-img").attr("src","https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+encodeURIComponent(qr_info));
         }
         if (!slickLoaded) {
             $(".card-carousel").slick({
