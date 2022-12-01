@@ -133,7 +133,7 @@ iframe {
 .leaf{
     position:absolute;
     width:100%;
-    height:calc(var(--view-height) - 90px - var(--safe-area-inset-bottom));
+    height:calc(var(--view-height) - 60px - var(--safe-area-inset-bottom));
     top:0;
     left:0;
     opacity: 0.5;
