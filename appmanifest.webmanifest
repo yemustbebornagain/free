@@ -1,7 +1,8 @@
 {
     "theme_color": "#fff",
     "background_color": "#fff",
-    "display": "browser",
+    "display": "fullscreen",
+    "orientation": "portrait",
     "scope": "/",
     "start_url": "https://getstudentcard.github.io",
     "name": "Studentkortet",
