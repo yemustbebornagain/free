@@ -332,3 +332,12 @@ iframe {
 .qr-code-container img {
     width: 100%;
 }
+.card-refresh {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: calc(0.25 * var(--view-height));
+    font-size: 17px;
+    line-height: 40px;
+}
