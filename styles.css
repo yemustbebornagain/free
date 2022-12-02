@@ -26,7 +26,7 @@
         /* Set content height to viewport width */
         height: var(--view-height);
         overflow-x: hidden;
-        position: absolute;
+        position: fixed;
         top: 100%;
         left: 0;
     }
