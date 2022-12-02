@@ -82,11 +82,4 @@ $(document).ready(function () {
             $("#qr-code").hide();
         }
     });
-    $(window).on("orientationchange", function(event) {
-        if (event.orientation == "landscape") {
-            $(".card-carousel").slick("slickSetOption", "verticalSwiping", true);
-        } else {
-            $(".card-carousel").slick("slickSetOption", "verticalSwiping", false);
-        }
-    });
 });
