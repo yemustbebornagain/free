@@ -82,4 +82,19 @@ $(document).ready(function () {
             $("#qr-code").hide();
         }
     });
+    $("#open-card-refresh").click(async function() {
+        $(".card-carousel").hide();
+        $(".card-refresh").show();
+        $(".leaf").hide();
+        await delay(1000);
+        $(".card-refresh").hide();
+        $(".card-carousel").show();
+        $(".leaf").show();
+    });
 });
+
+function delay(milliseconds){
+    return new Promise(resolve => {
+        setTimeout(resolve, milliseconds);
+    });
+}
