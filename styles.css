@@ -218,7 +218,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'aktiv-grotesk', 'Roboto', sans-serif;
+    font-family: aktiv-grotesk, 'Roboto', sans-serif;
 }
 input[type=text], select {
     width: 100%;
