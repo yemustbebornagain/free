@@ -439,6 +439,7 @@ iframe {
     transform: rotate(90deg);
     color: #000;
     opacity: 0.8;
+    text-shadow: 0px 0px 1px #000;
     position: absolute;
     right: calc(50% - 0.04 * var(--card-width));
     text-align: left;
