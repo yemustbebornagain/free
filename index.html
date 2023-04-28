@@ -1,14 +1,10 @@
 <?php
 session_start();
 
-// If user is already logged in, skip the login process
+// Redirect to login page if user is not logged in
 if (!isset($_SESSION['loggedin'])) {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['username']) && isset($_POST['password'])) {
-        // Code to check the username and password
-    } else {
-        header('Location: login.html');
-        exit;
-    }
+    header('Location: login.html');
+    exit;
 }
 ?>
 <!DOCTYPE html>
