@@ -7,6 +7,14 @@
    /* --safe-area-inset-top: env(safe-area-inset-top); LOOK AT ME */ 
     --safe-area-inset-bottom: env(safe-area-inset-bottom);
 }
+
+/* Lock screen orientation to portrait mode */
+@media (max-width: 767px) {
+  body {
+    orientation: portrait;
+  }
+}
+
 @media only screen and (orientation: landscape) {
     :root {
         --card-width: 96vh;
