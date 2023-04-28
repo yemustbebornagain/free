@@ -4,7 +4,7 @@
     --card-margin-y: 2vw;
     --view-width: 100vw;
     --view-height: 100vh;
-    --safe-area-inset-top: env(safe-area-inset-top);
+   /* --safe-area-inset-top: env(safe-area-inset-top); LOOK AT ME */ 
     --safe-area-inset-bottom: env(safe-area-inset-bottom);
 }
 @media only screen and (orientation: landscape) {
@@ -260,6 +260,7 @@ iframe {
     transform-style: preserve-3d;
 }
 .flip-card-front, .flip-card-back {
+    top: 50px; /* look at me */
     position: absolute;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
