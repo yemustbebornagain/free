@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Studentkortet</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- <meta name="apple-mobile-web-app-status-bar-style" content="default"> -->
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- stylesheet -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href="slick.css" rel="stylesheet">
+  <link href="slick-theme.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel=”manifest” href=”appmanifest.webmanifest”>
+</head>
+<body>
+  <div id="edit-profile-overlay"></div>
+  <div id="open-card-overlay"></div>
+  <div class="iframe-wrapper">
+    <iframe src="https://www.studentkortet.se/"></iframe>
+  </div>
+  <div id="bottom-menu">
+    <div class="bottom-menu-item"><img src="icons/home-icon.png" /></div>
+    <div class="bottom-menu-item"><img src="icons/location-icon.png" class="blurr" /></div>
+    <div class="bottom-menu-item"><img src="icons/card-icon.webp" class="blurr" /></div>
+    <div class="bottom-menu-item"><img src="icons/ticket-icon.png" class="blurr" /></div>
+    <div class="bottom-menu-item"><img src="icons/blog-icon.webp" class="blurr" /></div>
+  </div>
+  <div id="edit-profile" class="hidden">
+    <div id="edit-profile-close"><img src="icons/close.svg"></div>
+    <label for="fullname">Full name</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Your full name...">
+    <label for="PN">Personal number (Ex: 990101-1234)</label>
+    <input type="text" id="PN" name="PN" placeholder="Your personal number...">
+  </div>
+  <div id="open-card" class="hidden">
+    <div class="leaf">
+      <div>  <img src="stuk-white.svg" height="75px" width="75px"></img></div>
+      <div><img src="stuk-white.svg" height="75px" width="75px"></img></div>
+      <div>  <img src="stuk-white.svg" height="75px" width="75px" ></img></div>
+      <div><img  src="stuk-white.svg" height="75px" width="75px"></img></div>
+      <div> <img src="stuk-white.svg" height="75px" width="75px"></img></div>
+      <div>   <img src="stuk-white.svg" height="75px" width="75px"></div>
+      <div><img src="stuk-white.svg" height="75px" width="75px"></div>
+    </div>
+    
+    <div class="card-carousel">
+      <div class="card-wrapper-ios">
+        <div class="card-wrapper">
+          <div class="flip-card-front">
+            <img src="card1-front.png" class="card" />
+            <div class="card-info">
+              <span id="card1-fullname"></span>
+              <br />
+              <span id="card1-PN"></span>
+              <br />
+              <span id="card1-number"></span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="card1-back.png" class="card" />
+          </div>
+        </div>
+      </div>
+      <div class="card-wrapper-ios">
+        <div class="card-wrapper">
+          <div class="flip-card-front">
+            <img src="card2-front.png" class="card" />
+            <div class="card-info">
+              <span id="card2-fullname"></span>
+              <br />
+              <span id="card2-PN"></span>
+              <br />
+              <span id="card2-number"></span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="card2-back.png" class="card" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-refresh hidden">
+      <img src="icons/loading-card.png" width="100" />
+      <br />
+      Hämta ditt Studentkort...
+      <br />
+      <img src="ajax-loader.gif" width="32" height="32" />
+    </div>
+    
+    <div id="open-card-close">Stäng</div>
+    <div id="open-card-qr"><img id="qr-code-open" src="icons/qr-icon.png" width="25" height="25" /></div>
+    <div id="open-card-refresh"><img src="icons/refresh-icon.png" width="25" height="25" /></div>
+  </div>
+  <div id="qr-code" class="hidden">
+    <div class="qr-code-container">
+      <h2>QR-kod för ditt kort</h2>
+      <img src="qr-code.webp" id="qr-code-img" />
+    </div>
+  </div>
+  <script src="jquery.js"></script>
+  <script src="slick.modified.js"></script>
+  <script src="main.js"></script> 
+</body>
+</html>
